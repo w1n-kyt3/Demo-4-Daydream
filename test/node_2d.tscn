@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7xm6m28jgtxx"]
+
+[ext_resource type="Texture2D" uid="uid://cdw4o0hecwwr1" path="res://assets/backdrop1.svg" id="1_0e48y"]
+[ext_resource type="Script" uid="uid://cps6ryihjr7gq" path="res://node_2d.gd" id="1_epypp"]
+[ext_resource type="PackedScene" uid="uid://cfj57tl5fvslu" path="res://char.tscn" id="2_epypp"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_epypp")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Backdrop1" type="Sprite2D" parent="CanvasLayer/TextureRect"]
+position = Vector2(578, 325.625)
+scale = Vector2(2.27953, 1.67298)
+texture = ExtResource("1_0e48y")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Node2D" parent="CanvasLayer2" instance=ExtResource("2_epypp")]
+position = Vector2(580, 323)
+scale = Vector2(0.375, 0.375)
+
+[node name="Control" type="Control" parent="CanvasLayer2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
